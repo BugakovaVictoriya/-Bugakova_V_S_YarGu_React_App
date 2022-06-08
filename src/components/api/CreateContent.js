@@ -41,7 +41,7 @@ import {ErrorMessage} from "./ErrorMessege"
         
         <div className="card-list__container _container">
           {loading && <div className="preloader" id="preloader">
-                        <img src={require('../../img/rings.svg').default}  width="100" alt=""/>
+                        <img src="img/rings.svg"  width="100" alt=""/>
                     </div>
                     }
           {error && (

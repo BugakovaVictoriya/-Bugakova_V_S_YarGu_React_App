@@ -11,7 +11,7 @@ const PreloaderGrand = () => {
         <>
         {loading && 
         <div className="preloader-grand" id="preloader-grand">
-            <img className="logo" src={require("../../img/icototoro.svg").default} alt=""/>
+            <img className="logo" src="img/icototoro.svg" alt=""/>
         </div>}
         </>
     );

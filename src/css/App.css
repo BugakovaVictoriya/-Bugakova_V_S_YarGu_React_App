@@ -92,7 +92,7 @@
 }
 
 .logo-screen__body {
-  background-image: url(../img/totoro.png);
+  background-image: url(../../public/img/totoro.png);
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
