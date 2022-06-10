@@ -1,5 +1,5 @@
-
-export default function Chip({ chip, handleChoice, flip, disabled }) {
+import React from "react";
+ function Chip({ chip, handleChoice, flip, disabled }) {
     const handleClick = () => {
         if (!disabled){
             handleChoice(chip)
@@ -14,3 +14,5 @@ export default function Chip({ chip, handleChoice, flip, disabled }) {
         </div>
     )
 }
+
+export default React.memo(Chip);

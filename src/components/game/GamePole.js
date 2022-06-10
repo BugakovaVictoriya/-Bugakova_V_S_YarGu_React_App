@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import Chip from './Chip';
+const RESET_CHOICE_INTERVAL = 1500;
 const gamechipArray = [
     {selected: false, imagePath: "../../img/game_card_1.svg", id: "img1"},
     {selected: false, imagePath: "../../img/game_card_1.svg", id: "img2"},
@@ -49,7 +50,7 @@ const GamePole = () => {
                 setWin(count => count + 1);
                 resetChoice();
             } else {
-                setTimeout(() => resetChoice(), 1500)
+                setTimeout(() => resetChoice(), RESET_CHOICE_INTERVAL)
             }
         }
     }, [choiceOne, choiceTwo])

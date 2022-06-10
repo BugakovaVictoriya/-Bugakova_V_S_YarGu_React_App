@@ -5,7 +5,7 @@ const Species = () => {
             <div className="fullscreen fullscreen__spec">
                 <h1>Species</h1>
             </div>
-            <CreateContent strName={'species'}/>
+            <CreateContent strName='species'/>
         </>
     )
 }

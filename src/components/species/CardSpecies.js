@@ -1,4 +1,4 @@
-const CardSpecies = (props) => {
+const CardSpecies = (props) => { //наименование полей props... в соответствии с требованиями api
     return (
         <div className="card-list__card card">
             <div className="card__title">{props.name}</div>

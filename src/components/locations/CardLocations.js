@@ -1,4 +1,4 @@
-const CardLocations = (props) => {
+const CardLocations = (props) => { //наименование полей props... в соответствии с требованиями api
     let climate = props.climate;
     let terrain = props.terrain;
     if(climate === 'TODO'){

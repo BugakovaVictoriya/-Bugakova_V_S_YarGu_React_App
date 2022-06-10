@@ -16,7 +16,7 @@ import {ErrorMessage} from "./ErrorMessege"
         const getData = async () => {
             try {
               const response = await fetch(
-                `${url}`
+                url
               );
               if (!response.ok) {
                 throw new Error(
@@ -35,68 +35,68 @@ import {ErrorMessage} from "./ErrorMessege"
           }
           getData()
         }, [])
-        
+  
+        let content = (loading) ? (
+          <div className="preloader" id="preloader">
+            <img src="img/rings.svg"  width="100" alt=""/>
+          </div>
+        ) : (error) ? (
+          <ErrorMessage error={error}/>
+        ) : (data) ? ({
+          films: data.map(({ title, original_title_romanised, original_title, description, release_date, id }) => (
+            <CardFilm 
+              key={id}
+              title={title}
+              original_title_romanised={original_title_romanised}
+              original_title={original_title}
+              description={description}
+              release_date={release_date}
+            />
+          )),
+          locations: data.map(({ name, climate, terrain, surface_water, id }) => (
+            <CardLocations 
+              key={id}
+              name={name}
+              climate={climate}
+              terrain={terrain}
+              surface_water={surface_water}
+            />
+          )),
+          people: data.map(({ name, gender, age, eye_color, hair_color, id }) => (
+            <CardPeople 
+              key={id}
+              name={name}
+              gender={gender}
+              age={age}
+              eye_color={eye_color}
+              hair_color={hair_color}
+            />
+          )),
+          species: data.map(({ name, classification, eye_colors, hair_colors, id }) => (
+            <CardSpecies 
+              key={id}
+              name={name}
+              classification={classification}
+              eye_colors={eye_colors}
+              hair_colors={hair_colors}
+            />
+          )),
+          vehicles: data.map(({ name, description, vehicle_class, length, id }) => (
+            <CarVehicles 
+              key={id}
+              name={name}
+              description={description}
+              vehicle_class={vehicle_class}
+              length={length}
+            />
+          ))
+          }[props.strName]
+        ) : null;
 
     return (
         
         <div className="card-list__container _container">
-          {loading && <div className="preloader" id="preloader">
-                        <img src="img/rings.svg"  width="100" alt=""/>
-                    </div>
-                    }
-          {error && (
-            <ErrorMessage error={error}/>
-          )}
-            {data &&
-            {
-                films: data.map(({ title, original_title_romanised, original_title, description, release_date, id }) => (
-                    <CardFilm 
-                        key={id}
-                        title={title}
-                        original_title_romanised={original_title_romanised}
-                        original_title={original_title}
-                        description={description}
-                        release_date={release_date}
-                    />
-                )),
-                locations: data.map(({ name, climate, terrain, surface_water, id }) => (
-                    <CardLocations 
-                        key={id}
-                        name={name}
-                        climate={climate}
-                        terrain={terrain}
-                        surface_water={surface_water}
-                    />
-                )),
-                people: data.map(({ name, gender, age, eye_color, hair_color, id }) => (
-                    <CardPeople 
-                        key={id}
-                        name={name}
-                        gender={gender}
-                        age={age}
-                        eye_color={eye_color}
-                        hair_color={hair_color}
-                    />
-                )),
-                species: data.map(({ name, classification, eye_colors, hair_colors, id }) => (
-                    <CardSpecies 
-                        key={id}
-                        name={name}
-                        classification={classification}
-                        eye_colors={eye_colors}
-                        hair_colors={hair_colors}
-                    />
-                )),
-                vehicles: data.map(({ name, description, vehicle_class, length, id }) => (
-                    <CarVehicles 
-                        key={id}
-                        name={name}
-                        description={description}
-                        vehicle_class={vehicle_class}
-                        length={length}
-                    />
-                ))
-            }[props.strName]}
+          {content}
         </div>
       );
 }
