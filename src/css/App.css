@@ -192,11 +192,12 @@
 .information-panel {
   background-color: #d1d0d0;
   color: #757474;
+  line-height: 50px;
 }
 
 .information-panel__container {
-  min-height: 3vh;
-  padding: 15px 15px;
+  min-height: 6vh;
+  padding-left: 15px;
   margin: 0px auto;
 }
 
@@ -359,8 +360,11 @@
   margin-top: 50px;
 }
 
+.not-found {
+  min-height: 88vh;
+}
+
 .not-found__container {
-  min-height: 86vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

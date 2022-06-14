@@ -144,9 +144,10 @@
 .information-panel {
     background-color: rgb(209, 208, 208);
     color: rgb(117, 116, 116);
+    line-height: 50px;
     &__container {
-        min-height: 3vh;
-        padding: 15px 15px;
+        min-height: 6vh;
+        padding-left: 15px;
         margin: 0px auto;
     }
 }
@@ -258,8 +259,8 @@
 }
 
 .not-found{
+    min-height: 88vh;
     &__container {
-        min-height: 86vh;
         display: flex;
         flex-direction: column;
         align-items: center;
