@@ -6,6 +6,7 @@ import { Species } from "./components/species/Species";
 import { Vehicles } from "./components/vehicles/Vehicles";
 import {Header} from "./components/Header";
 import Footer from "./components/Footer";
+import PageNotFoud from "./components/PageNotFound";
 import PreloaderGrand from "./components/api/PreloaderGrand"
 import "./css/App.css"
 import { useLocation } from "react-router";
@@ -26,6 +27,7 @@ function App() {
                 <Route path="/locations" element={<Locations />} />
                 <Route path="/species" element={<Species />} />
                 <Route path="/vehicles" element={<Vehicles />} />
+                <Route path="/*" element={<PageNotFoud />} />
             </Route>
         </Routes>
         <Footer />

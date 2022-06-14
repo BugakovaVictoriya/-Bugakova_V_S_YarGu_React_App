@@ -1,14 +1,14 @@
 import React from "react";
- function Chip({ chip, handleChoice, flip, disabled }) {
+ function Chip({ id, selected, imagePath, handleChoice, flip, disabled }) {
     const handleClick = () => {
         if (!disabled){
-            handleChoice(chip)
+            handleChoice(id)
         }
     }
     return (
-        <div className="games-pole__chips chips" key={chip.id}>
-            <div className={flip ? "flip" : "" || chip.selected ? "flip" : ""}>
-                <img className="front" src={chip.imagePath} alt=""/>
+        <div className="games-pole__chips chips" key={id}>
+            <div className={flip ? "flip" : "" || selected ? "flip" : ""}>
+                <img className="front" src={imagePath} alt=""/>
                 <img className="back" src="img/game_card_0.svg" onClick={handleClick} alt=""/>
             </div>
         </div>

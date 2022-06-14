@@ -30,7 +30,8 @@ const GamePole = () => {
         setWin(0);
     }
 
-    const handleChoice = (chip) => {//выбор карточек обновить состояние нажата 1 или 2
+    const handleChoice = (chipId) => {//выбор карточек обновить состояние нажата 1 или 2
+        const chip = cards.find((card) => card.id === chipId);
         choiceOne ? setChoiceTwo(chip) : setChoiceOne(chip);
     }
 
@@ -68,7 +69,9 @@ const GamePole = () => {
                 {cards.map(chip => (
                     <Chip 
                     key={chip.id} 
-                    chip={chip} 
+                    id={chip.id} 
+                    selected={chip.selected} 
+                    imagePath={chip.imagePath} 
                     handleChoice={handleChoice} 
                     flip={chip === choiceOne || chip === choiceTwo || chip === chip.selected} 
                     disabled={disabled}
